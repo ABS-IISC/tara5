@@ -16,8 +16,9 @@ s3transfer==0.7.0
 six==1.16.0
 
 # Celery task queue with SQS + S3 (No Redis required!)
-# Note: pycurl removed - not needed, celery uses boto3 for SQS
-celery[sqs]==5.3.4
+# Note: Using plain celery (not celery[sqs]) to avoid pycurl dependency
+# SQS support works via kombu + boto3 (already in requirements)
+celery==5.3.4
 kombu==5.3.4
 vine==5.1.0
 amqp==5.2.0
